@@ -5,31 +5,32 @@ export default class DistrictRepository {
 
   dataCleanFunction(dataSet) {
     return dataSet.reduce((acc, val) => {
-      // !acc[val.Location] ?
-      //     acc[val.Location] = {[val.TimeFrame]: val.Data} :
-      //     acc[val.Location][val.TimeFrame] = val.Data
       let { Location, TimeFrame, Data } = val;
+      let upperCaseLocation = Location.toUpperCase();
+      let formatData = Data.toFixed(3);
+      console.log(formatData)
+
       if (!acc[Location]) {
-        acc[Location] = {};
-        acc[Location].location = Location;
-        acc[Location].data = {};
+        acc[upperCaseLocation] = {};
+        acc[upperCaseLocation].location = Location;
+        acc[upperCaseLocation].data = {};
       }
 
-      acc[val.Location].data[val.TimeFrame] = val.Data
-
+      acc[upperCaseLocation].data[TimeFrame] = formatData;
       return acc
     }, {})
   }
 
   findByName(name) {
-   if (!name) {
-     return undefined;
-   }
-   let school = Object.keys(this.data).filter(key => {
-     if (name === key) {
-       return this.data[key]
-     }
-   })
-   return this.data[school]
+    let upperCaseName = name.toUpperCase();
+    if (!upperCaseName) {
+      return undefined;
+    }
+    let school = Object.keys(this.data).filter(key => {
+      if (upperCaseName === key) {
+        return this.data[key]
+      }
+    })
+    return this.data[school]
   }
 }
