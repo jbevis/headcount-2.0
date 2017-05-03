@@ -5,7 +5,7 @@ export const Year = ({ year }) => {
     <section>
       { Object.keys(year).map((key, index) => {
         return (
-          <p>{key}</p>
+          <p key={index}>{key}</p>
         )
       }) }
     </section>

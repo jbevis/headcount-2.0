@@ -3,6 +3,7 @@ import '../App.css';
 import { CardRender } from './CardRender'
 import DistrictRepository from '../helper'
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
+import SearchField from './SearchField'
 
 
 class App extends Component {
@@ -24,14 +25,41 @@ class App extends Component {
     })
   }
 
+  handleClick (district, data) {
+    console.log('hooked up!')
+    console.log(district);
+    const district1 = new DistrictRepository(kinderData)
+    let item = district1.findByName(district)
+
+    console.log(item) //JUST KEYS
+
+    this.setState({
+      kinderData: {item}
+    })
+    // let keys = Object.keys(kinderData)
+    //
+    // let objs = keys.reduce((acc, val) => {
+    //
+    //   return acc
+    // }, {})``
+    // this.setState({
+    //   kinderData: district1.findAllMatches(district)
+    // })
+
+  }
+
   render() {
     return (
       <div>
         <h1>Welcome to Headcount 2.0</h1>
+        <SearchField
+          handleClick={this.handleClick.bind(this)}
+        />
         <CardRender kinderData={this.state.kinderData} />
       </div>
     );
   }
 }
+// kinderData={this.state.kinderData}
 
 export default App;
