@@ -25,6 +25,7 @@ export default class DistrictRepository {
   findByName(name='') {
     let upperCaseName = name.toUpperCase()
 
+
     if (!upperCaseName) {
       return undefined;
     }
@@ -34,7 +35,7 @@ export default class DistrictRepository {
         return this.data[key]
       }
     })
-    
+
     return this.data[school]
   }
 
