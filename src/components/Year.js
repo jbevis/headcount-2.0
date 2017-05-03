@@ -11,3 +11,8 @@ export const Year = ({ year }) => {
     </section>
   )
 }
+
+const { object } = React.PropTypes
+Year.propTypes = {
+  year: object.isRequired
+}

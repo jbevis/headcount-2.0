@@ -13,3 +13,8 @@ export const CardRender = ({ kinderData }) => {
       </section>
     )
 }
+
+const { object } = React.PropTypes
+CardRender.propTypes = {
+  kinderData: object.isRequired
+}
