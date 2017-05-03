@@ -17,7 +17,6 @@ export default class DistrictRepository {
       }
 
       acc[upperCaseLocation].data[TimeFrame] = formatData;
-
       return acc
     }, {})
   }
@@ -51,4 +50,45 @@ export default class DistrictRepository {
       return key.includes(upperCaseName)
     })
   }
+
+  filterOnChange(district, data) {
+    let matches = this.findAllMatches(district)
+    let matchedDistricts = matches.reduce((acc, key) => {
+      if (!acc[key]) {
+      acc[key] = this.data[key]
+    }
+      return acc
+    }, {})
+    return matchedDistricts
+  }
+
+  findAverage(district) {
+    let districtObj = this.findByName(district)
+    let dataKeys = Object.keys(districtObj.data)
+
+    let dataTotal = dataKeys.reduce((acc, key) => {
+       return acc + districtObj.data[key]
+    }, 0)
+    let avg = dataTotal/dataKeys.length
+    return Math.round(avg*1000)/1000 || 0
+  }
+
+  compareDistrictAverages (a, b) {
+    console.log('a',a,'b',b)
+    let upperA = a.toUpperCase()
+    let upperB = b.toUpperCase()
+    let avgA = this.findAverage(a)
+    let avgB = this.findAverage(b)
+    let compared = Math.round(avgA/avgB*1000)/1000 || 0
+
+
+
+    let output = Object.assign({}, {[upperA]: avgA }, { [upperB]: avgB }, {compared: compared})
+
+    return output
+
+
+
+  }
+
 }
