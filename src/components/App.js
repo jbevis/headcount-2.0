@@ -33,6 +33,7 @@ class App extends Component {
 
     console.log(item) //JUST KEYS
 
+
     this.setState({
       kinderData: {item}
     })
@@ -48,16 +49,10 @@ class App extends Component {
 
   }
 
-  filterDistricts(string) {
-    const district2 = new DistrictRepository(kinderData)
-    let matches = district2.findAllMatches(string)
-    let matchedDistricts = matches.reduce((acc, key) => {
-      if (!acc[key]) {
-      acc[key] = district2.data[key]
-    }
-      return acc
-    }, {})
-    this.setState({ kinderData: matchedDistricts})
+  filterDistricts(district) {
+    let district2 = new DistrictRepository(kinderData)
+    let result = district2.filterOnChange(district, kinderData)
+    this.setState({ kinderData: result})
   }
 
   render() {
