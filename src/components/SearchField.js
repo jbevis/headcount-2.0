@@ -6,16 +6,14 @@ export default class SearchField extends Component {
     super()
     this.state = {
       district: ''
-      // autocomplete: []
     }
   }
 
   handleInput(e) {
     const inputValue = e.target.value
-    this.setState({
-      district: inputValue
+    this.setState( {district: inputValue}, () => {
+      this.props.handleFilter(this.state.district)
     })
-    // this.autoCompleteApiGenerator(inputValue)
   }
 
   returnSelection() {
@@ -25,31 +23,6 @@ export default class SearchField extends Component {
     })
   }
 
-//   autoCompleteApiGenerator(inputValue) {
-//   this.props.kinderData[inputValue].then((data) => {
-//     this.state.autocomplete = [];
-//     data.RESULTS.forEach((location) => {
-//       if (inputValue.length > 2) {
-//         this.state.autocomplete.push(location.location);
-//         this.handleAutoComplete();
-//       }
-//     });
-//   });
-// }
-//
-//   handleAutoComplete() {
-//     $('.user-input').autocomplete({
-//       minLength: 2,
-//       source: this.state.autocomplete,
-//       open: () => $('.ui-menu').width(285),
-//       select: (event, ui) => {
-//         this.setState({
-//           location: ui.item.value,
-//         }, this.selectCity);
-//       },
-//     });
-//   }
-
   render() {
     return (
       <section>
@@ -57,11 +30,11 @@ export default class SearchField extends Component {
           className= 'user-input'
           type='text'
           placeholder='Enter a District'
-          onChange={(e) => {this.handleInput(e)}}
+          onChange={ (e) => {this.handleInput(e)} }
         />
         <input
           type='submit'
-          onClick={() => {this.returnSelection()}}
+          onClick={ () => {this.returnSelection()} }
         />
       </section>
     )

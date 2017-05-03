@@ -48,12 +48,25 @@ class App extends Component {
 
   }
 
+  filterDistricts(string) {
+    const district2 = new DistrictRepository(kinderData)
+    let matches = district2.findAllMatches(string)
+    let matchedDistricts = matches.reduce((acc, key) => {
+      if (!acc[key]) {
+      acc[key] = district2.data[key]
+    }
+      return acc
+    }, {})
+    this.setState({ kinderData: matchedDistricts})
+  }
+
   render() {
     return (
       <div>
         <h1>Welcome to Headcount 2.0</h1>
         <SearchField
           handleClick={this.handleClick.bind(this)}
+          handleFilter={this.filterDistricts.bind(this)}
         />
         <CardRender kinderData={this.state.kinderData} />
       </div>

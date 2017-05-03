@@ -3,7 +3,6 @@ import { Year } from './Year'
 import { YearlyData } from './YearlyData'
 
 export const Card = ({ kinderData }) => {
-  console.log(kinderData)
   return (
     <section>
       { Object.keys(kinderData).map((key, index) => {
@@ -19,4 +18,9 @@ export const Card = ({ kinderData }) => {
       }) }
     </section>
   )
+}
+
+const { object } = React.PropTypes
+Card.propTypes = {
+  kinderData: object.isRequired
 }
