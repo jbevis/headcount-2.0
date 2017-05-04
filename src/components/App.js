@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import { CardRender } from './CardRender'
+import { CardList } from './CardList'
 import DistrictRepository from '../helper'
 import kinderData from '../../data/kindergartners_in_full_day_program.js';
 import SearchField from './SearchField'
@@ -67,7 +67,7 @@ class App extends Component {
           handleClick={this.handleClick.bind(this)}
           handleFilter={this.filterDistricts.bind(this)}
         />
-        <CardRender kinderData={this.state.kinderData}
+        <CardList kinderData={this.state.kinderData}
                     handleToggle={this.toggleCard}/>
       </div>
     );
