@@ -55,6 +55,10 @@ class App extends Component {
     this.setState({ kinderData: result})
   }
 
+  toggleCard(e) {
+
+  }
+
   render() {
     return (
       <div>
@@ -63,7 +67,8 @@ class App extends Component {
           handleClick={this.handleClick.bind(this)}
           handleFilter={this.filterDistricts.bind(this)}
         />
-        <CardRender kinderData={this.state.kinderData} />
+        <CardRender kinderData={this.state.kinderData}
+                    handleToggle={this.toggleCard}/>
       </div>
     );
   }
