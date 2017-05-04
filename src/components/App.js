@@ -10,7 +10,8 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      kinderData: {}
+      kinderData: {},
+      dataCompare: []
     }
   }
 
@@ -37,16 +38,6 @@ class App extends Component {
     this.setState({
       kinderData: {item}
     })
-    // let keys = Object.keys(kinderData)
-    //
-    // let objs = keys.reduce((acc, val) => {
-    //
-    //   return acc
-    // }, {})``
-    // this.setState({
-    //   kinderData: district1.findAllMatches(district)
-    // })
-
   }
 
   filterDistricts(district) {
@@ -55,8 +46,26 @@ class App extends Component {
     this.setState({ kinderData: result})
   }
 
-  toggleCard(e) {
-
+  toggleCard(district) {
+    if (!this.state.dataCompare.length) {
+      this.state.dataCompare.push(district)
+      console.log(1)
+      return this.setState( {dataCompare: this.state.dataCompare})
+    } else if (this.state.dataCompare.length < 3 && this.state.dataCompare.includes(district)) {
+      let result = this.state.dataCompare.filter(val => {
+        return district !== val
+      })
+      console.log(2)
+      return this.setState( {dataCompare: result} )
+    } else if (this.state.dataCompare.length < 2 && !this.state.dataCompare.includes(district)) {
+      this.state.dataCompare.push(district)
+      console.log(3)
+      return this.setState( {dataCompare: this.state.dataCompare})
+    }
+      this.state.dataCompare.shift()
+      this.state.dataCompare.push(district)
+      console.log(4)
+      return this.setState( {dataCompare: this.state.dataCompare})
   }
 
   render() {
@@ -68,11 +77,10 @@ class App extends Component {
           handleFilter={this.filterDistricts.bind(this)}
         />
         <CardList kinderData={this.state.kinderData}
-                    handleToggle={this.toggleCard}/>
+                    handleToggle={this.toggleCard.bind(this)}/>
       </div>
     );
   }
 }
-// kinderData={this.state.kinderData}
 
 export default App;

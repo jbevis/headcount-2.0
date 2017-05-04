@@ -3,8 +3,9 @@ import React from 'react';
 export const Card = ({ location, data, handleToggle }) => {
 
   return (
-    <article className='district-card'
-              onClick={(e) => { handleToggle(e) } }>
+    <article  id={location}
+              className='district-card'
+              onClick={() => { handleToggle(location) } }>
       <h3>{ location }</h3>
 
         {Object.keys(data).map((year, index) => {

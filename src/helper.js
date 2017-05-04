@@ -23,19 +23,7 @@ export default class DistrictRepository {
 
   findByName(name='') {
     let upperCaseName = name.toUpperCase()
-
-
-    if (!upperCaseName) {
-      return undefined;
-    }
-
-    let school = Object.keys(this.data).filter(key => {
-      if (upperCaseName === key) {
-        return this.data[key]
-      }
-    })
-
-    return this.data[school]
+    return this.data[upperCaseName]
   }
 
   findAllMatches(name='') {
