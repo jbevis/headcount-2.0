@@ -1,4 +1,9 @@
 /*APP COMPONENT RELATED CSS GOES HERE*/
+.App {
+  max-width: 500px;
+  margin: auto;
+}
+
 .below {
   color: red;
 }

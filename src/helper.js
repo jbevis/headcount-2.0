@@ -74,17 +74,13 @@ export default class DistrictRepository {
   }
 
   compareDistrictAverages (a, b) {
-    console.log('a',a,'b',b)
     let upperA = a.toUpperCase()
     let upperB = b.toUpperCase()
     let avgA = this.findAverage(a)
     let avgB = this.findAverage(b)
     let compared = Math.round(avgA/avgB*1000)/1000 || 0
 
-
-
     let output = Object.assign({}, {[upperA]: avgA }, { [upperB]: avgB }, {compared: compared})
-
     return output
 
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from './Card';
 
-export const CardRender = ({ kinderData }) => {
+export const CardRender = ({ kinderData, handleToggle }) => {
     if (!kinderData) {
       return (
         <h4>Some shit should go here</h4>
@@ -9,7 +9,8 @@ export const CardRender = ({ kinderData }) => {
     }
     return (
       <section>
-        <Card kinderData={ kinderData }/>
+        <Card kinderData={ kinderData }
+              handleToggle={ handleToggle }/>
       </section>
     )
 }
