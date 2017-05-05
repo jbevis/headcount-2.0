@@ -1,9 +1,104 @@
 /*APP COMPONENT RELATED CSS GOES HERE*/
+body {
+  font-family: 'Droid Sans', sans-serif;
+  background-color: #B8DBD9;
+}
+
 .App {
   max-width: 500px;
   margin: auto;
 }
 
+#header {
+  display: flex;
+  justify-content: center;
+  font-weight: 700;
+  background-color: #111B21;
+  color: #DBF9F5;
+  margin: auto;
+  font-size: 32px;
+  padding: 15px;
+}
+
+#card-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.compare-field {
+  display: flex;
+  justify-content: space-around;
+}
+
+.district-card {
+  background-color: #FFF;
+  box-shadow: 3px 3px 3px #586F7C;
+  width: 200px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px;
+}
+
+.district-card:hover {
+  box-shadow: none;
+  background-color: #f5f5f5;
+}
+
+h3 {
+  font-size: 24px;
+  margin: 15px;
+  text-align: center;
+}
+
+p {
+  margin: 5px
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-input {
+  height: 25px;
+  width: 250px;
+  border: none;
+  font-size: 14px;
+  padding: 5px;
+  margin: 10px;
+}
+
+.button {
+  width: 125px;
+  height: 35px;
+  background-color: #2F4550;
+  color: #DBF9F5;
+  font-size: 14px;
+  padding: 5px;
+  margin: 10px;
+  border: none;
+}
+
+.button:hover {
+  background-color: #586F7C
+}
+
+.year-data {
+  display: flex;
+  margin: 0;
+}
+
+.above {
+  color: #111B21;
+  font-weight: 600;
+}
+
 .below {
   color: red;
+  font-weight: 600;
 }

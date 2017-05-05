@@ -71,14 +71,10 @@ class App extends Component {
       return this.setState( {dataCompare: this.state.dataCompare})
   }
 
-
-
-
-
   render() {
     return (
       <div>
-        <h1>Welcome to Headcount 2.0</h1>
+        <h1 id="header">Welcome to Headcount 2.0</h1>
         <Comparison
           districtRepository={this.districtRepository}
           dataCompare={this.state.dataCompare}
