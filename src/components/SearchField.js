@@ -27,7 +27,7 @@ export default class SearchField extends Component {
     return (
       <section>
         <input
-          className= 'user-input'
+          className='user-input'
           type='text'
           placeholder='Enter a District'
           onChange={ (e) => {this.handleInput(e)} }

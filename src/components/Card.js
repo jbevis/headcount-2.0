@@ -12,8 +12,8 @@ export const Card = ({ location, data, handleToggle }) => {
           if(data[year] < 0.5) {
             return(
               <section key={index}>
-              <p>{year}</p>
-              <p className='below'>{data[year]}</p>
+                <p>{year}</p>
+                <p className='below'>{data[year]}</p>
               </section>
             )
           } else {
@@ -34,7 +34,7 @@ export const Card = ({ location, data, handleToggle }) => {
 
 const { object } = React.PropTypes
 Card.propTypes = {
-  kinderData: object.isRequired
+  data: object.isRequired
 }
 
 
