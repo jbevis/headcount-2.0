@@ -16,13 +16,13 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
     a = districtRepository.findByName(dataCompare[0])
     console.log('phase2', a.location, JSON.stringify(a.data));
     return(
-      <div>
-      <Card
-        location={a.location}
-        data={a.data}
-        handleToggle={handleToggle}
-      />
-      </div>
+      <section className="compare-field">
+        <Card
+          location={a.location}
+          data={a.data}
+          handleToggle={handleToggle}
+        />
+      </section>
     )
   } else if (dataCompare.length === 2) {
     dataCompare.forEach(() => {
@@ -31,7 +31,7 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
     })
     console.log('phase3', 'a', a.location, a.data, 'b', b.location, b.data);
     return(
-      <section>
+      <section className="compare-field">
         <Card location={a.location}
               data={a.data}
               handleToggle={handleToggle}

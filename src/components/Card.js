@@ -7,25 +7,25 @@ export const Card = ({ location, data, handleToggle }) => {
               className='district-card'
               onClick={() => { handleToggle(location) } }>
       <h3>{ location }</h3>
-
+      <section className='card-data'>
         {Object.keys(data).map((year, index) => {
           if(data[year] < 0.5) {
             return(
-              <section key={index}>
-                <p>{year}</p>
+              <section key={index} className="year-data">
+                <p>{year}:</p>
                 <p className='below'>{data[year]}</p>
               </section>
             )
           } else {
             return(
-              <section key={index}>
-              <p>{year}</p>
-              <p className='above'>{data[year]}</p>
+              <section key={index} className="year-data">
+                <p>{year}:</p>
+                <p className='above'>{data[year]}</p>
               </section>
             )
           }
         })}
-
+      </section>
     </article>
   )
 

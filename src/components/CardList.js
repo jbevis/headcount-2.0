@@ -9,14 +9,12 @@ export const CardList = ({ kinderData, handleToggle }) => {
     }
 
     return (
-      <section>
+      <section id="card-list">
         { Object.keys(kinderData).map((key, index) => {
           return (
             <Card
-              location={ kinderData[key].location }
-              data={ kinderData[key].data }
+              location={ kinderData[key].location }     data={ kinderData[key].data }
               handleToggle={ handleToggle }
-              key={index}
             />
           )
         }) }

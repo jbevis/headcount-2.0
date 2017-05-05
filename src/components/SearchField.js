@@ -25,14 +25,15 @@ export default class SearchField extends Component {
 
   render() {
     return (
-      <section>
+      <section className="controls">
         <input
           className='user-input'
           type='text'
-          placeholder='Enter a District'
+          placeholder='Search by district'
           onChange={ (e) => {this.handleInput(e)} }
         />
         <input
+          className = 'button'
           type='submit'
           onClick={ () => {this.returnSelection()} }
         />
