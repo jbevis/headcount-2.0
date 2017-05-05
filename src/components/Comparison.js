@@ -1,6 +1,7 @@
 import React from 'react'
 // import DistrictRepository from '../helper'
 import { Card } from './Card.js'
+import { ComparisonCard } from './ComparisonCard'
 
 export const Comparison = ({ districtRepository , dataCompare, kinderData, handleToggle }) => {
   let a = ''
@@ -34,6 +35,11 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
         <Card location={a.location}
               data={a.data}
               handleToggle={handleToggle}
+        />
+        <ComparisonCard
+              districtRepository={ districtRepository }
+              locationA={a.location}
+              locationB={b.location}
         />
         <Card location={b.location}
               data={b.data}

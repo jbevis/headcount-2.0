@@ -70,9 +70,5 @@ export default class DistrictRepository {
 
     let output = Object.assign({}, {[upperA]: avgA }, { [upperB]: avgB }, {compared: compared})
     return output
-
-
-
   }
-
 }
