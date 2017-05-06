@@ -14,13 +14,15 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
     )
   } else if (dataCompare.length === 1) {
     a = districtRepository.findByName(dataCompare[0])
-    console.log('phase2', a.location, JSON.stringify(a.data));
     return(
       <section className="compare-field">
         <Card
           location={a.location}
           data={a.data}
           handleToggle={handleToggle}
+          districtRepository={districtRepository}
+          dataCompare={dataCompare}
+
         />
       </section>
     )
@@ -35,6 +37,10 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
         <Card location={a.location}
               data={a.data}
               handleToggle={handleToggle}
+              districtRepository={districtRepository}
+              dataCompare={dataCompare}
+
+
         />
         <ComparisonCard
               districtRepository={ districtRepository }
@@ -44,6 +50,10 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
         <Card location={b.location}
               data={b.data}
               handleToggle={handleToggle}
+              districtRepository={districtRepository}
+              dataCompare={dataCompare}
+
+
         />
       </section>
     )

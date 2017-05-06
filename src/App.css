@@ -102,3 +102,7 @@ p {
   color: red;
   font-weight: 600;
 }
+
+.is-selected {
+  background-color: red;
+}
