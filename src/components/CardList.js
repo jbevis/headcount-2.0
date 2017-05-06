@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from './Card';
 
-export const CardList = ({ kinderData, handleToggle }) => {
+export const CardList = ({ kinderData, handleToggle, districtRepository, dataCompare }) => {
     if (!kinderData) {
       return (
         <h4>Some shit should go here</h4>
@@ -13,8 +13,12 @@ export const CardList = ({ kinderData, handleToggle }) => {
         { Object.keys(kinderData).map((key, index) => {
           return (
             <Card
-              location={ kinderData[key].location }     data={ kinderData[key].data }
+              location={ kinderData[key].location }
+              data={ kinderData[key].data }
               handleToggle={ handleToggle }
+              districtRepository={districtRepository}
+              dataCompare={dataCompare}
+
             />
           )
         }) }

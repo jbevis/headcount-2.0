@@ -1,10 +1,13 @@
 import React from 'react';
 
-export const Card = ({ location, data, handleToggle }) => {
+export const Card = ({ location, data, handleToggle, districtRepository, dataCompare }) => {
+  let cssClass = districtRepository.selectionId(location, dataCompare)
+  console.log(cssClass)
+
 
   return (
     <article  id={location}
-              className='district-card'
+              className={`district-card ${cssClass}`}
               onClick={() => { handleToggle(location) } }>
       <h3>{ location }</h3>
       <section className='card-data'>

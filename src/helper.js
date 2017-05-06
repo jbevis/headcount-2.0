@@ -71,4 +71,44 @@ export default class DistrictRepository {
     let output = Object.assign({}, {[upperA]: avgA }, { [upperB]: avgB }, {compared: compared})
     return output
   }
+
+  selectionId (location, selected) {
+    if (selected.length === 0) {
+      return ""
+    } else if (selected.length) {
+      let match = selected.find((val) => {
+        return val === location
+      })
+      if (match) {
+        return 'is-selected'
+      }
+    }
+  }
 }
+
+// let match = selected.find((val) => {
+//   return val === location
+
+
+
+
+
+
+
+
+
+
+//   console.log(selected)
+//   if (!selected.length) {
+//     return ""
+//   }
+//   let match = selected.find(val => {
+//     return val === location
+//   });
+//   console.log(match)
+//
+//   if (match) {
+//     return 'is-selected'
+//   }
+//   return match || ""
+// }

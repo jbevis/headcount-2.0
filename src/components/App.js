@@ -17,7 +17,7 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.initialSetState(kinderData);
   }
 
@@ -86,7 +86,10 @@ class App extends Component {
           handleFilter={this.filterDistricts.bind(this)}
         />
         <CardList kinderData={this.state.kinderData}
-                    handleToggle={this.toggleCard.bind(this)}
+                  handleToggle={this.toggleCard.bind(this)}
+                  districtRepository={this.districtRepository}
+                  dataCompare={this.state.dataCompare}
+
         />
       </div>
     );
