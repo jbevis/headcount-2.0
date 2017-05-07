@@ -3,7 +3,7 @@ import React from 'react'
 import { Card } from './Card.js'
 import { ComparisonCard } from './ComparisonCard'
 
-export const Comparison = ({ districtRepository , dataCompare, kinderData, handleToggle }) => {
+export const Comparison = ({ districtRepository , dataCompare, kinderData, handleToggle, removeCards }) => {
   let a = ''
   let b = ''
 
@@ -46,6 +46,8 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
               districtRepository={ districtRepository }
               locationA={a.location}
               locationB={b.location}
+              handleToggle={handleToggle}
+              removeCards={removeCards}
         />
         <Card location={b.location}
               data={b.data}
