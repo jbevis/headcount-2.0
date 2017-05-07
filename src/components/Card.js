@@ -8,7 +8,7 @@ export const Card = ({ location, data, handleToggle, districtRepository, dataCom
     <article  id={location}
               className={`district-card ${cssClass}`}
               onClick={() => { handleToggle(location) } }>
-      <h3>{ location }</h3>
+      <h3 className='card-location'>{ location }</h3>
       <section className='card-data'>
         {Object.keys(data).map((year, index) => {
           if(data[year] < 0.5) {
