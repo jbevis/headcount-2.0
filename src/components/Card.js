@@ -2,14 +2,13 @@ import React from 'react';
 
 export const Card = ({ location, data, handleToggle, districtRepository, dataCompare }) => {
   let cssClass = districtRepository.selectionId(location, dataCompare)
-  console.log(cssClass)
 
 
   return (
     <article  id={location}
               className={`district-card ${cssClass}`}
               onClick={() => { handleToggle(location) } }>
-      <h3>{ location }</h3>
+      <h3 className='card-location'>{ location }</h3>
       <section className='card-data'>
         {Object.keys(data).map((year, index) => {
           if(data[year] < 0.5) {
