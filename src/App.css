@@ -1,25 +1,25 @@
 /*APP COMPONENT RELATED CSS GOES HERE*/
 body {
-  font-family: 'Droid Sans', sans-serif;
   background-color: #828282;
   color: #eaeaea;
+  font-family: 'Droid Sans', sans-serif;
 }
 
 .App {
-  max-width: 500px;
   margin: auto;
+  max-width: 500px;
 }
 
 #header {
-  display: flex;
-  height: 75px;
-  justify-content: center;
   align-items: center;
-  font-weight: 700;
   background-color: #1b1b1b;
   color: rgba(255, 249, 196, 1);
-  margin: auto;
+  display: flex;
   font-size: 32px;
+  font-weight: 700;
+  height: 75px;
+  justify-content: center;
+  margin: auto;
   padding: 15px;
 }
 
@@ -35,36 +35,35 @@ body {
 }
 
 .district-card {
+  align-items: center;
+  background-blend-mode: overlay;
   background-color: #FFF;
+  background-color: rgba(24, 24, 25, 0.49);
+  background-image: url('images/city.jpg');
+  background-size: cover;
+  border-radius: 5px;
   box-shadow: 3px 3px 3px rgba(37, 37, 37, 0.40);
-  width: 200px;
-  padding: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   margin: 10px;
-  background-image: url('images/city.jpg');
-  background-size: cover;
-  background-blend-mode: overlay;
-  background-color: rgba(24, 24, 25, 0.49);
-  border-radius: 5px;
+  padding: 15px;
+  width: 200px;
 }
 
 .district-card:hover {
-  box-shadow: none;
   background-blend-mode: overlay;
   background-color: rgba(121, 111, 20, 0.33);
+  box-shadow: none;
 }
 
 .content-container {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   background-blend-mode: overlay;
   background-color: rgba(24, 24, 25, 0.60);
   border-radius: 5px;
-
+  display: flex;
+  flex-direction: column;
 }
 
 h3 {
@@ -78,36 +77,35 @@ p {
 }
 
 .controls {
-  display: flex;
-  justify-content: center;
   align-items: center;
+  display: flex;
   height: 100px;
+  justify-content: center;
 }
 
 .user-input {
-  height: 25px;
-  width: 250px;
+  border-radius: 5px;
   border: none;
   font-size: 14px;
-  padding: 5px;
+  height: 25px;
   margin: 10px;
-  border-radius: 5px;
+  padding: 5px;
+  width: 250px;
 }
 
 .button {
-  width: 125px;
-  height: 35px;
   background-color: #1b1b1b;
+  border-radius: 5px;
+  border: none;
   color: rgba(255, 249, 196, 1);;
   font-size: 14px;
-  padding: 5px;
+  height: 35px;
   margin: 10px;
-  border: none;
-  border-radius: 5px;
+  padding: 5px;
+  width: 125px;
 }
 
 .button:hover {
-  /*background-color: #586F7C*/
   background-blend-mode: overlay;
   background-color: rgba(248, 249, 196, 0.51);
 }
@@ -136,13 +134,14 @@ p {
   body {
     min-width: 320px;
   }
+  
   #header {
     text-align: center;
   }
 
   .compare-field {
-    flex-direction: column;
     align-items: center;
+    flex-direction: column;
   }
 
   .controls {
@@ -153,5 +152,4 @@ p {
   .button{
     width:250px;
   }
-
 }
