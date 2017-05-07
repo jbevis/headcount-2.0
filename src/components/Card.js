@@ -2,7 +2,6 @@ import React from 'react';
 
 export const Card = ({ location, data, handleToggle, districtRepository, dataCompare }) => {
   let cssClass = districtRepository.selectionId(location, dataCompare)
-  console.log(cssClass)
 
 
   return (

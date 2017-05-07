@@ -25,6 +25,14 @@ describe('CardList --> shallowMounts', () => {
 
     expect(id).toEqual('card-list')
   })
+
+  it('has a no-data-found id when no data is passed through to CardList', () => {
+    const missingDataWrapper = wrapperShallow = shallow(<CardList />)
+
+    const id = missingDataWrapper.find('.no-data-found').root.nodes[0].props.id
+
+    expect(id).toEqual('no-data-found')
+  })
 })
 
 describe('CardList --> Mounts', () => {

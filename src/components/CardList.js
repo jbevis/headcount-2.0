@@ -4,7 +4,7 @@ import { Card } from './Card';
 export const CardList = ({ kinderData, handleToggle, districtRepository, dataCompare }) => {
     if (!kinderData) {
       return (
-        <h4>Headcount 2.0 needs a data source</h4>
+        <h4 id='no-data-found'>Headcount 2.0 needs a data source</h4>
       )
     }
 
