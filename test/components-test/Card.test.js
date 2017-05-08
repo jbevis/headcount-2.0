@@ -1,12 +1,12 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import ReactDOM from 'react-dom';
-import { Card } from '../../src/components/Card';
-import kinderData from '../../data/kindergartners_in_full_day_program.js';
+import React from 'react'
+import { shallow, mount } from 'enzyme'
+import ReactDOM from 'react-dom'
+import { Card } from '../../src/components/Card'
+import kinderData from '../../data/kindergartners_in_full_day_program.js'
 import DistrictRepository from '../../src/helper'
 
 describe('Card --> shallowMounts', () => {
-  let wrapperShallow;
+  let wrapperShallow
   const districtRepository = new DistrictRepository(kinderData)
   const mockHandleToggle = jest.fn()
 
@@ -37,7 +37,7 @@ describe('Card --> shallowMounts', () => {
 })
 
 describe('Card --> Mounts', () => {
-  let wrapperMount;
+  let wrapperMount
   const districtRepository = new DistrictRepository(kinderData)
   const mockHandleToggle = jest.fn()
 

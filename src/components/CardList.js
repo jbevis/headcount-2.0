@@ -18,7 +18,6 @@ export const CardList = ({ kinderData, handleToggle, districtRepository, dataCom
               handleToggle={ handleToggle }
               districtRepository={districtRepository}
               dataCompare={dataCompare}
-
             />
           )
         }) }

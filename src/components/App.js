@@ -22,20 +22,13 @@ class App extends Component {
   }
 
   initialSetState (data) {
-    // const district = new DistrictRepository(data)
     this.setState({
       kinderData: this.districtRepository.data
     })
   }
 
   handleClick (district, data) {
-    console.log('hooked up!')
-    console.log(district);
-    // const district1 = new DistrictRepository(kinderData)
     let item = this.districtRepository.findByName(district)
-
-    console.log(item) //JUST KEYS
-
 
     this.setState({
       kinderData: {item}
@@ -43,7 +36,6 @@ class App extends Component {
   }
 
   filterDistricts(district) {
-    // let district2 = new DistrictRepository(kinderData)
     let result = this.districtRepository.filterOnChange(district, kinderData)
     this.setState({ kinderData: result})
   }
@@ -90,7 +82,6 @@ class App extends Component {
                   handleToggle={this.toggleCard.bind(this)}
                   districtRepository={this.districtRepository}
                   dataCompare={this.state.dataCompare}
-
         />
       </div>
     );

@@ -32,32 +32,9 @@ export const Card = ({ location, data, handleToggle, districtRepository, dataCom
       </section>
     </article>
   )
-
-
 }
 
 const { object } = React.PropTypes
 Card.propTypes = {
   data: object.isRequired
 }
-
-
-
-
-// return (
-//   <section>
-//     { Object.keys(data).map((key, index) => {
-//       return (
-//         <article  className='district-card'
-//                   key={index}
-//                   onClick={(e) => { handleToggle(e) } }>
-//           <h3>{ kinderData[key].location }</h3>
-//           <section>
-//             <Year year={kinderData[key].data}/>
-//             <YearlyData yearData={kinderData[key].data}/>
-//           </section>
-//         </article>
-//       )
-//     }) }
-//   </section>
-// )
