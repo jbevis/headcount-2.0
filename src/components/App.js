@@ -52,23 +52,23 @@ class App extends Component {
 
     if (!this.state.dataCompare.length) {
       this.state.dataCompare.push(district)
-      console.log(1)
       return this.setState( {dataCompare: this.state.dataCompare})
     } else if (this.state.dataCompare.length < 3 && this.state.dataCompare.includes(district)) {
       let result = this.state.dataCompare.filter(val => {
         return district !== val
       })
-      console.log(2)
       return this.setState( {dataCompare: result} )
     } else if (this.state.dataCompare.length < 2 && !this.state.dataCompare.includes(district)) {
       this.state.dataCompare.push(district)
-      console.log(3)
       return this.setState( {dataCompare: this.state.dataCompare})
     }
       this.state.dataCompare.shift()
       this.state.dataCompare.push(district)
-      console.log(4)
       return this.setState( {dataCompare: this.state.dataCompare})
+  }
+
+  removeCards() {
+    return this.setState({dataCompare: []})
   }
 
   render() {
@@ -80,6 +80,7 @@ class App extends Component {
           dataCompare={this.state.dataCompare}
           kinderData={this.state.kinderData}
           handleToggle={this.toggleCard.bind(this)}
+          removeCards={this.removeCards.bind(this)}
         />
         <SearchField
           handleClick={this.handleClick.bind(this)}
