@@ -40,3 +40,9 @@ export default class SearchField extends Component {
     )
   }
 }
+
+const { func } = React.PropTypes
+SearchField.propTypes = {
+  handleClick: func.isRequired,
+  handleFilter: func.isRequired
+}

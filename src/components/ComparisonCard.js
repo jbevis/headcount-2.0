@@ -15,3 +15,12 @@ export const ComparisonCard = ({ districtRepository, locationA, locationB, handl
     </article>
   )
 }
+
+const { object, func, string } = React.PropTypes
+ComparisonCard.propTypes = {
+  districtRepository: object.isRequired,
+  locationA: string.isRequired,
+  locationB: string.isRequired,
+  handleToggle: func.isRequired,
+  removeCards: func.isRequired,
+}

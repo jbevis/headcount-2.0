@@ -26,7 +26,10 @@ export const CardList = ({ kinderData, handleToggle, districtRepository, dataCom
   }
 
 
-const { object } = React.PropTypes
+const { object, func, array } = React.PropTypes
 CardList.propTypes = {
-  kinderData: object.isRequired
+  kinderData: object.isRequired,
+  handleToggle: func.isRequired,
+  districtRepository: object.isRequired,
+  dataCompare: array.isRequired
 }

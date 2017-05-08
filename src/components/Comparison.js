@@ -53,3 +53,12 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
     )
   }
 }
+
+const { object, array, func } = React.PropTypes
+Comparison.propTypes = {
+  districtRepository: object.isRequired,
+  dataCompare: array.isRequired,
+  kinderData: object.isRequried,
+  handleToggle: func.isRequired,
+  removeCards: func.isRequired
+}
