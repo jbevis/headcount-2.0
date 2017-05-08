@@ -73,7 +73,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div id='app'>
         <h1 id="header">Welcome to Headcount 2.0</h1>
         <Comparison
           districtRepository={this.districtRepository}
