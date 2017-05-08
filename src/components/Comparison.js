@@ -7,9 +7,8 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
   let b = ''
 
   if(!dataCompare.length) {
-    console.log('phase1')
     return(
-      <div id="no-data"></div>
+      <div className="no-data"></div>
     )
   } else if (dataCompare.length === 1) {
     a = districtRepository.findByName(dataCompare[0])
@@ -29,7 +28,6 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
       a = districtRepository.findByName(dataCompare[0])
       b = districtRepository.findByName(dataCompare[1])
     })
-    console.log('phase3', 'a', a.location, a.data, 'b', b.location, b.data);
     return(
       <section className="compare-field">
         <Card location={a.location}
