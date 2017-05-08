@@ -20,20 +20,28 @@ describe('Comparison --> shallow mounts', () => {
     expect(found.length).toEqual(1);
   })
 
-  it('should render two cards if to be compared', () => {
-    const found = wrapperShallow.find('.district-card');
-    // const co = wrapperShallow.find('#Colorado');
-    // const academy = wrapperShallow.find('#ACADEMY 20');
+  it('should render three cards to display data if two locations are in data compare', () => {
+    const found = wrapperShallow.find('.compare-field');
+    const children = found.node.props.children;
 
-    // expect(co.length).toEqual(1);
-    // expect(academy.length).toEqual(1);
-    expect(found.length).toEqual(2)
+    expect(children.length).toEqual(3)
   })
 
-  it('should render a card comparing the two districts in state', () => {
-    const found = wrapperShallow.find('#compare-card');
+  it('should only render one duplicate district data card if one in data compare array', () => {
+    const tempWrapperShallow = shallow(<Comparison districtRepository={testRepo} kinderData={testRepo.data} dataCompare={['Colorado']} />);
+    const foundCard = tempWrapperShallow.find('.compare-field')
+    const child = foundCard.length;
 
-    expect(found.length).toEqual(1)
+    expect(child).toEqual(1)
   })
+
+  it('should only render one duplicate district data card if one in data compare array', () => {
+    const tempWrapperShallow = shallow(<Comparison districtRepository={testRepo} kinderData={testRepo.data} dataCompare={[]} />);
+    const div = tempWrapperShallow.find('div')
+
+    expect(div.hasClass('no-data')).toBe(true)
+  })
+
+
 
 })
