@@ -1,5 +1,4 @@
 import React from 'react'
-// import DistrictRepository from '../helper'
 import { Card } from './Card.js'
 import { ComparisonCard } from './ComparisonCard'
 
@@ -10,7 +9,7 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
   if(!dataCompare.length) {
     console.log('phase1')
     return(
-      <div></div>
+      <div id="no-data"></div>
     )
   } else if (dataCompare.length === 1) {
     a = districtRepository.findByName(dataCompare[0])
@@ -22,7 +21,6 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
           handleToggle={handleToggle}
           districtRepository={districtRepository}
           dataCompare={dataCompare}
-
         />
       </section>
     )
@@ -39,8 +37,6 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
               handleToggle={handleToggle}
               districtRepository={districtRepository}
               dataCompare={dataCompare}
-
-
         />
         <ComparisonCard
               districtRepository={ districtRepository }
