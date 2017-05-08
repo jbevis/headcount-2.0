@@ -1,14 +1,14 @@
-import React from 'react';
-import { shallow, mount } from 'enzyme';
-import ReactDOM from 'react-dom';
-import { CardList } from '../../src/components/CardList';
-import kinderData from '../../data/kindergartners_in_full_day_program.js';
+import React from 'react'
+import { shallow, mount } from 'enzyme'
+import ReactDOM from 'react-dom'
+import { CardList } from '../../src/components/CardList'
+import kinderData from '../../data/kindergartners_in_full_day_program.js'
 import DistrictRepository from '../../src/helper'
 
 
 
 describe('CardList --> shallowMounts', () => {
-  let wrapperShallow;
+  let wrapperShallow
   const districtRepository = new DistrictRepository(kinderData)
 
   beforeEach(() => {
@@ -16,7 +16,7 @@ describe('CardList --> shallowMounts', () => {
   })
 
   it('renders without crashing', () => {
-    const div = document.createElement('div');
+    const div = document.createElement('div')
     ReactDOM.render(<CardList />, div)
   })
 
@@ -36,7 +36,7 @@ describe('CardList --> shallowMounts', () => {
 })
 
 describe('CardList --> Mounts', () => {
-  let wrapperMount;
+  let wrapperMount
   const districtRepository = new DistrictRepository(kinderData)
 
   beforeEach(() => {

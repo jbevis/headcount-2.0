@@ -85,30 +85,3 @@ export default class DistrictRepository {
     }
   }
 }
-
-// let match = selected.find((val) => {
-//   return val === location
-
-
-
-
-
-
-
-
-
-
-//   console.log(selected)
-//   if (!selected.length) {
-//     return ""
-//   }
-//   let match = selected.find(val => {
-//     return val === location
-//   });
-//   console.log(match)
-//
-//   if (match) {
-//     return 'is-selected'
-//   }
-//   return match || ""
-// }

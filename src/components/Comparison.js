@@ -48,8 +48,6 @@ export const Comparison = ({ districtRepository , dataCompare, kinderData, handl
               handleToggle={handleToggle}
               districtRepository={districtRepository}
               dataCompare={dataCompare}
-
-
         />
       </section>
     )

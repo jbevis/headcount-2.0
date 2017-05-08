@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-// import $ui from 'jquery-ui';
 
 export default class SearchField extends Component {
   constructor () {
